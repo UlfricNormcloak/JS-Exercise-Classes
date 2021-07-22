@@ -87,9 +87,17 @@ class Car {
   fill(gallons){
     this.tank += gallons;
   }
-  drive(distance, gallons, milesPerGallon){
-    this.odometer += distance;
-    this.tank -= gallons / milesPerGallon;
+  drive(distance){
+    // this.odometer += distance;
+    if (distance/this.milesPerGallon - this.tank < 0){
+        this.odometer = this.odometer + distance;
+        this.tank = this.tank - distance/this.milesPerGallon;
+        return;
+    } else if(distance/this.milesPerGallon - this.tank >= 0){
+      this.odometer = this.odometer + this.milesPerGallon * this.tank;
+      this.tank = 0;
+      return `I ran out of fuel at ${this.odometer} miles!`;
+    }
   }
 }
 
@@ -105,6 +113,8 @@ class Car {
         + Speaking should return a phrase `Hello my name is {name}, I am from {location}`.
         + {name} and {location} of course come from the instance's own properties.
 */
+
+
 class Lambdasian {
   constructor (attributes){
     this.name = attributes.name;
@@ -207,6 +217,9 @@ class ProjectManager extends Instructor{
      return `${this.name} debugs ${student.name}'s code on ${subject}`;
    }
 }
+
+
+
 /*
   STRETCH PROBLEM (no tests!)
     - Extend the functionality of the Student by adding a prop called grade and setting it equal to a number between 1-100.
