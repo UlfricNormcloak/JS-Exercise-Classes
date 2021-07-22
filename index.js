@@ -44,7 +44,11 @@ class Airplane {
 */
 
 class Person {
-  
+  constructor(name, age){
+    this.name = name;
+    this.age = age;
+    this.stomach = [];
+  }
 }
 
 /*
@@ -62,7 +66,12 @@ class Person {
 */
 
 class Car {
-  
+  constructor(model, milesPerGallon, tank, odometer){
+    this.model = model;
+    this. milesPerGallon = milesPerGallon;
+    this.tank = 0;
+    this.odometer = 0;
+  }
 }
 
 /*
@@ -78,7 +87,14 @@ class Car {
         + {name} and {location} of course come from the instance's own properties.
 */
 class Lambdasian {
-  
+  constructor (attributes){
+    this.name = attributes.name;
+    this.age = attributes.age;
+    this.location = attributes.location;
+  }
+  speak(){
+    return `Hello my name is ${this.name}, I am from ${this.location}`;
+  }
 }
 
 /*
