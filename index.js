@@ -8,6 +8,8 @@
         + If a plane lands, its `isFlying` property gets set to false.
 */
 
+/*temporary code for 1st commit to setup codegrade*/
+
 // EXAMPLE SOLUTION CODE:
 class Airplane {
   constructor(name) {
